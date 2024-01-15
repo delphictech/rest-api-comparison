@@ -8,7 +8,14 @@ This is a basic Node.js project created for learning purposes. The project focus
 
 Ensure you have Node.js installed on your machine.
 
-In your terminal run:
+Download with the exe on the [node website](https://nodejs.org/en)
+
+or
+
+Use [ASDF](https://asdf-vm.com/) or [nvm](https://github.com/nvm-sh/nvm) to get a more specific version of node.
+
+
+Check if node is installed in your terminal:
 
 ``
 node --version
@@ -26,7 +33,7 @@ npm run dev
 
 * Make basic RESP APIs using Express
 * Understand middleware and check auth before allowing people to access the endpoint
- 
+* I recommend, reading [this article](https://blog.logrocket.com/organizing-express-js-project-structure-better-productivity/) about the Node and Express file structure. It is important to keep these rules in mind when creating larger projects. 
 
 #### Summary
 
