@@ -9,6 +9,7 @@ export const middleware = async (
   const { userID } = req.params;
   const { authtoken } = req.headers;
   console.log("userID", userID, "authToken", authtoken);
+  console.log(mockLoginDetails[userID]);
 
   try {
     if (mockLoginDetails[userID].authToken === authtoken) {

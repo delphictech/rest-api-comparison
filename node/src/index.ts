@@ -15,7 +15,7 @@ app.get("/hi", (_req: Request, res: Response) => {
 });
 
 // actual use case where middleware has to check auth before allowing route
-app.get("/coins", middleware);
+app.get("/coins/:userID", middleware, test);
 
 app.listen(port, () => {
   console.log(`now listening on port ${port}`);
