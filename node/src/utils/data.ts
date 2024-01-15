@@ -1,4 +1,8 @@
-import { LoginDetails, GenericAuthObject } from "./types/api";
+import {
+  LoginDetails,
+  GenericAuthObject,
+  CoinBalanceResponse,
+} from "../types/api";
 
 export const mockLoginDetails: GenericAuthObject<LoginDetails> = {
   alex: {
@@ -14,14 +18,14 @@ export const mockLoginDetails: GenericAuthObject<LoginDetails> = {
     userName: "marie",
   },
 };
-export const mockCoinDetails = {
+export const mockCoinDetails: GenericAuthObject<CoinBalanceResponse> = {
   alex: {
-    coins: 100,
+    balance: 100,
   },
   jason: {
-    coins: 200,
+    balance: 200,
   },
   marie: {
-    coins: 300,
+    balance: 300,
   },
 };

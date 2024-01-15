@@ -10,7 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.middleware = void 0;
-const data_1 = require("../data");
+const data_1 = require("../utils/data");
+/**
+ * the middleware function that runs whenever someone tries to access certain api routes
+ *
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
+ * @return {*}
+ */
 const middleware = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { userID } = req.params;
     const { authtoken } = req.headers;
@@ -20,7 +28,7 @@ const middleware = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         if (data_1.mockLoginDetails[userID].authToken === authtoken) {
             return next();
         }
-        return res.sendStatus(403);
+        return res.sendStatus(403).send("NOT AUTHORIZED");
     }
     catch (e) {
         return res.json({ message: "Internal Error" });

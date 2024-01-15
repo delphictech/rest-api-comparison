@@ -1,6 +1,13 @@
 import { NextFunction, Request, Response } from "express";
-import { mockLoginDetails } from "../data";
-
+import { mockLoginDetails } from "../utils/data";
+/**
+ * the middleware function that runs whenever someone tries to access certain api routes
+ *
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
+ * @return {*}
+ */
 export const middleware = async (
   req: Request,
   res: Response,
@@ -15,7 +22,7 @@ export const middleware = async (
     if (mockLoginDetails[userID].authToken === authtoken) {
       return next();
     }
-    return res.sendStatus(403);
+    return res.sendStatus(403).send("NOT AUTHORIZED");
   } catch (e) {
     return res.json({ message: "Internal Error" });
   }
