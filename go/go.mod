@@ -1,4 +1,4 @@
-module go-api
+module github.com/promethean-tech/go-vs-node-api/tree/main/go
 
 go 1.21.5
 
