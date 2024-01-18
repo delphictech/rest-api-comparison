@@ -2,7 +2,7 @@ package tools
 
 type mockDB struct {}
 
-var mockLoginDetails = map[string]LoginDetails {
+var MockLoginDetails = map[string]LoginDetails {
 	"alex": {
 		authToken: "123",
 		userName: "alex",
@@ -17,7 +17,7 @@ var mockLoginDetails = map[string]LoginDetails {
 	  },
 }
 
-var mockCoinDetails = map[string]CoinBalanceDetails {
+var MockCoinDetails = map[string]CoinBalanceDetails {
 	"alex": {
 		balance: 100,
 	},
@@ -28,4 +28,6 @@ var mockCoinDetails = map[string]CoinBalanceDetails {
 		balance: 300,
 	},
 }
+
+
 
