@@ -1,7 +1,7 @@
 package tools
 
 type LoginDetails struct {
-authToken string
+AuthToken string
 userName string
 }
 

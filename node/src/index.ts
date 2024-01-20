@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import { middleware } from "./middleware";
-import { middlwareController, test } from "./controllers";
+import { GetCoinBalance, test } from "./controllers";
 
 // make random port number
 const port = 8000;
@@ -15,7 +15,7 @@ app.get("/", (_req: Request, res: Response) => {
 app.get("/test", test);
 
 // actual use case where middleware has to check auth before allowing route
-app.get("/coins/:userID", middleware, middlwareController);
+app.get("/coins/:userID", middleware, GetCoinBalance);
 
 app.listen(port, () => {
   console.log(`now listening on port ${port}`);

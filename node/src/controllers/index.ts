@@ -7,7 +7,7 @@ import { mockCoinDetails } from "../utils/data";
  * @param {Request} req
  * @param {Response} res
  */
-export const middlwareController = (req: Request, res: Response) => {
+export const GetCoinBalance = (req: Request, res: Response) => {
   const { userID } = req.params;
 
   res.status(200).json({

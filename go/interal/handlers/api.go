@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi"
@@ -13,11 +14,17 @@ func Handler(r *chi.Mux) {
 	// global stripSlash middleware
 	r.Use(chimiddle.StripSlashes)
 
-	r.Route("/account", func(router chi.Router) {
+	// r.Route("/coins", func(router chi.Router) {
+	// 	router.Use(middleware.Authorization)
+
+	// 	router.Get("/{userID}", GetCoinBalance)
+
+	// })
+
+	r.Route("/coins/{userID}", func(router chi.Router) {
 		router.Use(middleware.Authorization)
-
-		router.Get("/coins", GetCoinBalance)
-
+	
+		router.Get("/", GetCoinBalance)
 	})
 
 
@@ -44,6 +51,8 @@ func testHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
+
+	fmt.Fprint(w, "TESTING FROM GO")
 
 	// Use chi's render package to render and send JSON response
 	render.JSON(w, r, response)
