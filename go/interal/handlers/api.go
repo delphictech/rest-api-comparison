@@ -23,18 +23,14 @@ func Handler(r *chi.Mux) {
 
 	r.Route("/coins/{userID}", func(router chi.Router) {
 		router.Use(middleware.Authorization)
-	
 
-
-		
 		router.Get("/", GetCoinBalance)
 	})
 
 	// test route
 	r.Route("/test", func(router chi.Router) {
-		
+
 		router.Get("/", testHandler)
-		
 
 	})
 }
@@ -43,7 +39,6 @@ func Handler(r *chi.Mux) {
 type TestResponse struct {
 	Message string `json:"message"`
 }
-
 
 func testHandler(w http.ResponseWriter, r *http.Request) {
 	response := TestResponse{Message: "Hello, Chi API!"}

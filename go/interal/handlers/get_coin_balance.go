@@ -15,17 +15,16 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 
 	var token = r.Header.Get("authtoken")
 
-	
-	response := map[string]string {
+	response := map[string]string{
 		"userName": username,
-		"token": token,
+		"token":    token,
 	}
 
 	err := json.NewEncoder(w).Encode(response)
 
-	 if err != nil {
+	if err != nil {
 		log.Error(err)
 		api.InternalErrorHandler(w)
 		return
-	 }
+	}
 }

@@ -24,14 +24,12 @@ func main() {
 		fmt.Fprint(w, "HELLO FROM GO")
 	})
 
-	
-
 	// Start the HTTP server on localhost:8000
 	port := 8000
 	fmt.Printf("Server is running on http://localhost:%d\n", port)
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), r)
 
-if err != nil {
-	log.Error((err))
-}
+	if err != nil {
+		log.Error((err))
+	}
 }
