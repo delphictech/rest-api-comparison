@@ -6,7 +6,6 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/promethean-tech/go-vs-node-api/tree/main/go/api"
-	// "github.com/promethean-tech/go-vs-node-api/tree/main/go/interal/tools"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -17,8 +16,6 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 	var token = r.Header.Get("authtoken")
 
 	
-
-
 	response := map[string]string {
 		"userName": username,
 		"token": token,
@@ -28,7 +25,7 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 
 	 if err != nil {
 		log.Error(err)
-		api.InternalERrorHandler(w)
+		api.InternalErrorHandler(w)
 		return
 	 }
 }

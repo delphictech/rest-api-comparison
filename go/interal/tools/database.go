@@ -16,22 +16,3 @@ type DatabaseInterface interface {
 	SetupDatabase() error
 }
 
-// func NewDatabase(name string, token string) (LoginDetails) {
-
-// 	// var database DatabaseInterface = &mockDB{}
-
-// 	// var err error = database.SetupDatabase()
-
-// 	// if err != nil {
-// 	// 	log.Error(err)
-// 	// 	return nil, err
-// 	// }
-
-
-
-// 	// return &database, nil
-
-
-// 	return mockLoginDetails[name]
-
-// }

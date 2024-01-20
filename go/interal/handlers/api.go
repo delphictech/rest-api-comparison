@@ -24,12 +24,11 @@ func Handler(r *chi.Mux) {
 	r.Route("/coins/{userID}", func(router chi.Router) {
 		router.Use(middleware.Authorization)
 	
+
+
+		
 		router.Get("/", GetCoinBalance)
 	})
-
-
-
-
 
 	// test route
 	r.Route("/test", func(router chi.Router) {

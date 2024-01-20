@@ -1,7 +1,5 @@
 package tools
 
-type mockDB struct {}
-
 var MockLoginDetails = map[string]LoginDetails {
 	"alex": {
 		AuthToken: "123",

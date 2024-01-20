@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	// "strings"
 	"errors"
 	"fmt"
 	"net/http"
@@ -17,12 +16,6 @@ var ErrorUnAuthorized = errors.New("invalidusername or token")
 func Authorization(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		// Manually extract the last segment of the URL path as "userID"
-		// segments := strings.Split(r.URL.Path, "/")
-		// var username string
-		// if len(segments) > 0 {
-		// 	username = segments[len(segments)-1]
-		// }
 
 		var username = chi.URLParam(r, "userID")
 
@@ -34,19 +27,12 @@ func Authorization(next http.Handler) http.Handler {
 		}
 
 
-		if username == "" || token == ""  {
-			log.Error(ErrorUnAuthorized)
-			api.RequestErrorHandler(w, ErrorUnAuthorized)
-		}
-
 		userData := tools.MockLoginDetails
-
-		fmt.Print(userData[username].AuthToken)
 
 
 		if userData[username].AuthToken == token {
 			next.ServeHTTP(w, r)
-
+			return 
 		}
 		
 		log.Error(ErrorUnAuthorized)
@@ -54,7 +40,6 @@ func Authorization(next http.Handler) http.Handler {
 
 
 	})
-
 
 
 }
