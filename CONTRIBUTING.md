@@ -29,14 +29,58 @@ Thank you for your interest in contributing to this project! Before you get star
 - You can look at the Golang example [here](https://github.com/promethean-tech/go-vs-node-api/issues)
 - Without these resources, your PR will not be merged.
 
-## Testing
+# Language API requirements
 
-- Run tests using [instructions].
-- Write new tests for your contributions.
+- You need to make a server that runs on your local machine running at "http://localhost:8000"
+- Since this repo is primarily aimed at beginners, it only requires 3 REST endpoints.
+  
+  
+     * http://localhost:8000/
+     this route will just return some message to the user running it on their local machine. EX: "Hello from GO!" 
+    
+     * http://localhost:8000/test
+     this route will just return some json or an object for the user to see EX {message: "Hello again!", code: 200}
+
+     * http://localhost:8000/coins/{userID}
+     this route is much more complicated. It requires middleware to check the user's auth instance by checking the headers inside the request and validate 
+     the user's token before allowing them access to the route. After this validation, it returns the user's token  
+     amount (See more down below on how to do this).
+  
+- These three routes are required, but any additional routes/examples are encouraged.
+- Use this data for user auth validation
+```javascript
+const mockLoginDetails = {
+  alex: {
+    authToken: "123",
+    userName: "alex",
+  },
+  jason: {
+    authToken: "234",
+    userName: "jason",
+  },
+  marie: {
+    authToken: "345",
+    userName: "marie",
+  },
+};
+const mockCoinDetails = {
+  alex: {
+    balance: 100,
+  },
+  jason: {
+    balance: 200,
+  },
+  marie: {
+    balance: 300,
+  },
+};
+```
+
+- For example, if you go to route localhost:8000/coins/alex and you have an input called "authToken" inside the headers set to "123" then you could receive his balance of 100 tokens. If the username or authToken is not set correctly inside the headers, then this route will throw an error  explaining that they are not permitted to access this route. 
 
 ## Documentation
 
-Please copy this as a baseline README.md for your language. If your language's README.md does not contain at least these fields, your PR will not be merged.
+If you are adding a language to the repo, please copy this as a baseline README.md for your language. If your language's README.md does not contain at least these fields, your PR will not be merged.
 
 ```shell
 ### EXAMPLE NOT COMPLETE
