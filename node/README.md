@@ -15,7 +15,7 @@ or
 Use [ASDF](https://asdf-vm.com/) or [nvm](https://github.com/nvm-sh/nvm) to get a more specific version of node.
 
 
-Check if node is installed in your terminal:
+Check if node is installed in your terminal before proceeding:
 
 ``
 node --version
