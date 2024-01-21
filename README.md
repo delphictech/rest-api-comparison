@@ -42,27 +42,8 @@ This repository contains basic REST APIs implemented in both Node.js and Go, des
 
 ## Contributing
 
-We welcome contributions! If you find issues or have suggestions:
+We welcome contributions! If you find issues or have suggestions please view the [CONTRIBUTING.md](https://github.com/promethean-tech/go-vs-node-api/blob/main/CONTRIBUTING.md) for the rules for contributions. 
 
-1. Fork the repository.
-
-2. Clone your forked repository:
-
-   git clone https://github.com/your-username/node-vs-go-rest-api.git
-
-3. Create a new branch:
-
-   git checkout -b feature/your-feature-name
-
-4. Make changes and commit:
-
-   git commit -m "Add your feature or fix"
-
-5. Push changes to your fork:
-
-   git push origin feature/your-feature-name
-
-6. Open a pull request from your fork to the original repository.
 
 ## License
 
