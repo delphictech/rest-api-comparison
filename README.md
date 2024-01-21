@@ -1,13 +1,12 @@
-# Node vs Go REST API Comparison
+# REST API Comparison
 
-This repository contains basic REST APIs implemented in both Node.js and Go, designed to help developers familiar with one language learn the other quickly.
+This repository contains basic REST APIs implemented in several backend languages and frameworks. This repo is designed to help developers familiar with one language learn the other quickly.
 
 ## Contents
 
 - [Node.js](./node): Node.js REST API examples
 - [Go](./go): Go REST API examples
 
-## Quick Start
 
 ## Why This Repository?
 
