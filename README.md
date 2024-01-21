@@ -9,36 +9,11 @@ This repository contains basic REST APIs implemented in both Node.js and Go, des
 
 ## Quick Start
 
-### Node.js
-
-1. Navigate to the `node` folder:
-
-   cd node
-
-2. Install dependencies and run the Node.js server:
-
-   npm install
-   npm start
-
-   The API server will be accessible at [http://localhost:3000](http://localhost:3000).
-
-### Go
-
-1. Navigate to the `go` folder:
-
-   cd go
-
-2. Run the Go server:
-
-   go run main.go
-
-   The API server will be accessible at [http://localhost:8080](http://localhost:8080).
-
 ## Why This Repository?
 
-- **Cross-Language Learning:** Explore side-by-side comparisons of basic REST API implementations in Node.js and Go.
+- **Cross-Language Learning:** Explore side-by-side comparisons of basic REST API implementations in Node.js, Go, and many other languages.
 
-- **Quick Start:** Examples provide a straightforward way for developers to get hands-on experience in both languages.
+- **Quick Start:** Examples provide a straightforward way for developers to get hands-on experience in several languages.
 
 ## Contributing
 
