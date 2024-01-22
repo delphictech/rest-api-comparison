@@ -23,6 +23,7 @@ type Error struct {
 	Message string
 }
 
+// function that will set the headers and send a response to the client if there is an error
 func writeError(w http.ResponseWriter, code int, message string) {
 	resp := Error{
 		Code:    code,
@@ -36,6 +37,7 @@ func writeError(w http.ResponseWriter, code int, message string) {
 
 }
 
+// export the error functions 
 var (
 	RequestErrorHandler = func(w http.ResponseWriter, err error) {
 		writeError(w, http.StatusBadRequest, err.Error())

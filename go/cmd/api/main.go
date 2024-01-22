@@ -9,13 +9,14 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+// the main go function that deploys the routes
 func main() {
 
+	// create an instance of chi
 	r := chi.NewRouter()
-	// var r *chi.Mux = chi.NewRouter()
 
-	// r := &re
-
+	// create the handlers, this seems to be the standard found here
+	// https://drstearns.github.io/tutorials/gomiddleware/
 	handlers.Handler(r)
 
 	// Define a handler function for the "/" route

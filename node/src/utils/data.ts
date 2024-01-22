@@ -4,6 +4,7 @@ import {
   CoinBalanceResponse,
 } from "../types/api";
 
+// Login/Auth detauils
 export const mockLoginDetails: GenericAuthObject<LoginDetails> = {
   alex: {
     authToken: "123",
@@ -18,6 +19,8 @@ export const mockLoginDetails: GenericAuthObject<LoginDetails> = {
     userName: "marie",
   },
 };
+
+// Balance object for the users
 export const mockCoinDetails: GenericAuthObject<CoinBalanceResponse> = {
   alex: {
     balance: 100,

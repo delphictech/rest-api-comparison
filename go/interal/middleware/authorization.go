@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi"
@@ -13,16 +12,14 @@ import (
 
 var ErrorUnAuthorized = errors.New("invalidusername or token")
 
+// middleware function that checks user auth before proceeding
 func Authorization(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
+		// get token and username from headers/params
 		var username = chi.URLParam(r, "userID")
 
 		var token = r.Header.Get("authtoken")
-
-		if username == "" {
-			fmt.Printf("nothing")
-		}
 
 		userData := tools.MockLoginDetails
 
@@ -31,6 +28,7 @@ func Authorization(next http.Handler) http.Handler {
 			return
 		}
 
+		// throw error if incorrect auth
 		log.Error(ErrorUnAuthorized)
 		api.RequestErrorHandler(w, ErrorUnAuthorized)
 
