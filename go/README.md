@@ -35,7 +35,7 @@ This will start the server at localhost8000. Please note that there is no listen
 ### Language Project layout resources
 
   - [golang-standards/project-layout](https://github.com/golang-standards/project-layout) official GitHub repo example
-  - [Go Organization](https://go.dev/doc/modules/layout) recomendations 
+  - [Go Organization](https://go.dev/doc/modules/layout) recommendations
     
 
 ### Language Specifics
