@@ -13,10 +13,19 @@ export const middleware = async (
   res: Response,
   next: NextFunction
 ) => {
+  // grab the userID from the params
   const { userID } = req.params;
+  // grab the authtoken from the headers
   const { authtoken } = req.headers;
-  console.log("userID", userID, "authToken", authtoken);
-  console.log(mockLoginDetails[userID]);
+
+  console.log(
+    "userID",
+    userID,
+    "authToken",
+    authtoken,
+    "mock user data",
+    mockLoginDetails[userID]
+  );
 
   try {
     if (mockLoginDetails[userID].authToken === authtoken) {
