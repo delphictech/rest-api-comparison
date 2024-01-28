@@ -12,7 +12,9 @@ export const GetCoinBalance = (req: Request, res: Response) => {
 
   res
     .status(200)
-    .json({ balance: mockCoinDetails[userID].balance, userName: userID });
+    .json({
+      data: { balance: mockCoinDetails[userID].balance, userName: userID },
+    });
 };
 
 /** Test case, just sending basic json response */

@@ -12,7 +12,9 @@ const GetCoinBalance = (req, res) => {
     const { userID } = req.params;
     res
         .status(200)
-        .json({ balance: data_1.mockCoinDetails[userID].balance, userName: userID });
+        .json({
+        data: { balance: data_1.mockCoinDetails[userID].balance, userName: userID },
+    });
 };
 exports.GetCoinBalance = GetCoinBalance;
 /** Test case, just sending basic json response */

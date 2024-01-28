@@ -47,12 +47,12 @@ describe("Test Successful API Routes", () => {
   });
 });
 
-// describe("Test API Errors", () => {
-//   it("test /coins/alex route ERROR", async () => {
-//     await expect(
-//       fetchDataFromAPI("http://localhost:8000/coins/alex")
-//     ).rejects.toMatchObject({
-//       response: { status: 403 },
-//     });
-//   });
-// });
+describe("Test API Errors", () => {
+  it("test /coins/alex route ERROR", async () => {
+    await expect(
+      fetchDataFromAPI("http://localhost:8000/coins/alex")
+    ).rejects.toMatchObject({
+      response: { status: 403 },
+    });
+  });
+});
