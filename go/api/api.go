@@ -14,8 +14,8 @@ type CoinBalanceParams struct {
 }
 
 type CoinBalanceResponse struct {
-	Code    int
-	Balance int64
+	UserName string `json:"userName"`
+	Balance  int64 `json:"balance"`
 }
 
 type Error struct {
@@ -37,7 +37,7 @@ func writeError(w http.ResponseWriter, code int, message string) {
 
 }
 
-// export the error functions 
+// export the error functions
 var (
 	RequestErrorHandler = func(w http.ResponseWriter, err error) {
 		writeError(w, http.StatusBadRequest, err.Error())

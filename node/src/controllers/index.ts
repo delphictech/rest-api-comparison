@@ -10,9 +10,9 @@ import { mockCoinDetails } from "../utils/data";
 export const GetCoinBalance = (req: Request, res: Response) => {
   const { userID } = req.params;
 
-  res.status(200).json({
-    data: { balance: mockCoinDetails[userID].balance, userName: userID },
-  });
+  res
+    .status(200)
+    .json({ balance: mockCoinDetails[userID].balance, userName: userID });
 };
 
 /** Test case, just sending basic json response */

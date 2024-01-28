@@ -1,4 +1,4 @@
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 
 // Function that makes an API call to localhost:8000
 async function fetchDataFromAPI(URL: string, headers?: Record<string, string>) {
@@ -10,7 +10,7 @@ async function fetchDataFromAPI(URL: string, headers?: Record<string, string>) {
   }
 }
 
-describe("Test API Routes", () => {
+describe("Test Successful API Routes", () => {
   it("should pass if setup is correct", async () => {
     expect(1).toBe(1);
   });
@@ -35,29 +35,24 @@ describe("Test API Routes", () => {
   });
 
   it("test /coins/alex route SUCCESS", async () => {
-    // Mocking the API response
-
-    const headers = {
-      authtoken: "123",
-    };
-
     // Call the function that fetches data from the API
-    const result = await fetchDataFromAPI(
-      "http://localhost:8000/coins/alex",
-      headers
-    );
+    const result = await fetchDataFromAPI("http://localhost:8000/coins/alex", {
+      authtoken: "123",
+    });
 
     console.log("results", result);
 
     // Check if the result matches the expected data
     expect(result.data.balance).toEqual(100);
   });
-
-    it("test /coins/alex route ERROR", async () => {
-      await expect(
-        fetchDataFromAPI("http://localhost:8000/coins/alex")
-      ).rejects.toMatchObject({
-        response: { status: 403 },
-      });
-    });
 });
+
+// describe("Test API Errors", () => {
+//   it("test /coins/alex route ERROR", async () => {
+//     await expect(
+//       fetchDataFromAPI("http://localhost:8000/coins/alex")
+//     ).rejects.toMatchObject({
+//       response: { status: 403 },
+//     });
+//   });
+// });

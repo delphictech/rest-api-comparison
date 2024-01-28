@@ -10,9 +10,9 @@ const data_1 = require("../utils/data");
  */
 const GetCoinBalance = (req, res) => {
     const { userID } = req.params;
-    res.status(200).json({
-        data: { balance: data_1.mockCoinDetails[userID].balance, userName: userID },
-    });
+    res
+        .status(200)
+        .json({ balance: data_1.mockCoinDetails[userID].balance, userName: userID });
 };
 exports.GetCoinBalance = GetCoinBalance;
 /** Test case, just sending basic json response */
