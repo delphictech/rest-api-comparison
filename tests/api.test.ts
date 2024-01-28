@@ -1,29 +1,63 @@
-import axios from 'axios';
+import axios, { AxiosHeaders } from "axios";
 
 // Function that makes an API call to localhost:8000
-async function fetchDataFromAPI() {
+async function fetchDataFromAPI(URL: string, headers?: Record<string, string>) {
   try {
-    const response = await axios.get('http://localhost:8000');
+    const response = await axios.get(URL, { headers });
     return response.data;
   } catch (error) {
-    console.error('Error fetching data from API:', error);
     throw error;
   }
 }
 
-describe('API Test', () => {
-  // Mocking the axios library
-  jest.mock('axios');
-
-  it('should return an object from the API', async () => {
-    // // Mocking the API response
-    // const mockApiResponse = { key: 'value' };
-    // (axios.get as jest.Mock).mockResolvedValue({ data: mockApiResponse });
-
-    // // Call the function that fetches data from the API
-    // const result = await fetchDataFromAPI();
-
-    // Check if the result is an object
+describe("Test API Routes", () => {
+  it("should pass if setup is correct", async () => {
     expect(1).toBe(1);
   });
+
+  it("test default route data", async () => {
+    // Call the function that fetches data from the API
+    const result = await fetchDataFromAPI("http://localhost:8000");
+
+    // Check if the result matches the expected data
+    expect(result).toEqual("HELLO WORLD");
+  });
+
+  it("test the /test route", async () => {
+    // Mocking the API response
+    const mockData = { message: "testing route", code: 200 };
+
+    // Call the function that fetches data from the API
+    const result = await fetchDataFromAPI("http://localhost:8000/test");
+
+    // Check if the result matches the expected data
+    expect(result).toEqual(mockData);
+  });
+
+  it("test /coins/alex route SUCCESS", async () => {
+    // Mocking the API response
+
+    const headers = {
+      authtoken: "123",
+    };
+
+    // Call the function that fetches data from the API
+    const result = await fetchDataFromAPI(
+      "http://localhost:8000/coins/alex",
+      headers
+    );
+
+    console.log("results", result);
+
+    // Check if the result matches the expected data
+    expect(result.data.balance).toEqual(100);
+  });
+
+    it("test /coins/alex route ERROR", async () => {
+      await expect(
+        fetchDataFromAPI("http://localhost:8000/coins/alex")
+      ).rejects.toMatchObject({
+        response: { status: 403 },
+      });
+    });
 });

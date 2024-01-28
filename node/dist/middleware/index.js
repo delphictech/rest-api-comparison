@@ -20,10 +20,11 @@ const data_1 = require("../utils/data");
  * @return {*}
  */
 const middleware = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    // grab the userID from the params
     const { userID } = req.params;
+    // grab the authtoken from the headers
     const { authtoken } = req.headers;
-    console.log("userID", userID, "authToken", authtoken);
-    console.log(data_1.mockLoginDetails[userID]);
+    console.log("userID", userID, "authToken", authtoken, "mock user data", data_1.mockLoginDetails[userID]);
     try {
         if (data_1.mockLoginDetails[userID].authToken === authtoken) {
             return next();
