@@ -15,7 +15,7 @@ type CoinBalanceParams struct {
 
 type CoinBalanceResponse struct {
 	UserName string `json:"userName"`
-	Balance  int64 `json:"balance"`
+	Balance  int64  `json:"balance"`
 }
 
 type Error struct {

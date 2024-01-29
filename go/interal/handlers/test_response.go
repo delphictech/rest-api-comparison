@@ -9,7 +9,7 @@ import (
 // TestResponse is a sample response struct
 type TestResponse struct {
 	Message string `json:"message"`
-	Code int64 `json:"code"`
+	Code    int64  `json:"code"`
 }
 
 func TestHandler(w http.ResponseWriter, r *http.Request) {
