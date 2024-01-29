@@ -3,7 +3,7 @@ package handlers
 import (
 	"github.com/go-chi/chi"
 	chimiddle "github.com/go-chi/chi/middleware"
-	
+
 	"github.com/promethean-tech/go-vs-node-api/tree/main/go/interal/middleware"
 )
 
@@ -28,5 +28,3 @@ func Handler(r *chi.Mux) {
 		router.Get("/", GetCoinBalance)
 	})
 }
-
-

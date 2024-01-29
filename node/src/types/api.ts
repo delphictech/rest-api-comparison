@@ -9,7 +9,7 @@ export interface LoginDetails {
   userName: string;
 }
 
-// generic object type 
+// generic object type
 export interface GenericAuthObject<T> {
   [key: string]: T;
 }

@@ -6,7 +6,7 @@ type LoginDetails struct {
 }
 
 type CoinBalanceDetails struct {
-	balance int64
+	Balance int64
 }
 
 type DatabaseInterface interface {
