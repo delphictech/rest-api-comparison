@@ -90,10 +90,11 @@ npm install
 npm run test
 ```
 - Please note that even if you don't have the server running, at least 1 unit test should pass ensuring that you have the tests folder configured/installed properly.
+- For more testing requirements, please check the tests [README.md](https://github.com/promethean-tech/rest-api-comparison/tree/dev/tests)
 
 ## Documentation
 
-If you are adding a language to the repo, please copy this as a baseline README.md for your language. If your language's README.md does not contain at least these fields, your PR will not be merged. The node README example can be found [here]()
+If you are adding a language to the repo, please copy this as a baseline README.md for your language. If your language's README.md does not contain at least these fields, your PR will not be merged. The node README example can be found [here](https://github.com/promethean-tech/rest-api-comparison/tree/main/node#learning-nodejs-rest-api-project)
 
 ```
 # Learning [Your language or framework] REST API Project
