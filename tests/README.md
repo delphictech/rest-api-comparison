@@ -1,6 +1,6 @@
 ## Testing 
 
-A testing folder is in place that will test all three of these basic API routes. Before creating your PR please make sure all of the unit tests pass.
+Unit tests are in place to make testing these API routes easier.
 
 To run these unit tests, run your local server at localhost8000
 
