@@ -1,16 +1,8 @@
-import axios from "axios";
+import { fetchDataFromAPI } from "./utils/helper";
 
-// Function that makes an API call to localhost:8000
-async function fetchDataFromAPI(URL: string, headers?: Record<string, string>) {
-  try {
-    const response = await axios.get(URL, { headers });
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-}
-
+// test used for checking all successful api routes
 describe("Test Successful API Routes", () => {
+  // test jest setup
   it("should pass if setup is correct", async () => {
     expect(1).toBe(1);
   });
@@ -27,32 +19,17 @@ describe("Test Successful API Routes", () => {
     // Mocking the API response
     const mockData = { message: "testing route", code: 200 };
 
-    // Call the function that fetches data from the API
     const result = await fetchDataFromAPI("http://localhost:8000/test");
 
-    // Check if the result matches the expected data
     expect(result).toEqual(mockData);
   });
 
   it("test /coins/alex route SUCCESS", async () => {
-    // Call the function that fetches data from the API
     const result = await fetchDataFromAPI("http://localhost:8000/coins/alex", {
       authtoken: "123",
     });
 
-    console.log("results", result);
-
     // Check if the result matches the expected data
     expect(result.data.balance).toEqual(100);
-  });
-});
-
-describe("Test API Errors", () => {
-  it("test /coins/alex route ERROR", async () => {
-    await expect(
-      fetchDataFromAPI("http://localhost:8000/coins/alex")
-    ).rejects.toMatchObject({
-      response: { status: 403 },
-    });
   });
 });
