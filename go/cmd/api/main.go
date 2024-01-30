@@ -22,7 +22,7 @@ func main() {
 	// Define a handler function for the "/" route
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		// Send the response "HELLO FROM GO"
-		fmt.Fprint(w, "HELLO FROM GO")
+		fmt.Fprint(w, "HELLO WORLD")
 	})
 
 	// Start the HTTP server on localhost:8000

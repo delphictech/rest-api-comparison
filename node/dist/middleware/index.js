@@ -20,15 +20,16 @@ const data_1 = require("../utils/data");
  * @return {*}
  */
 const middleware = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const { userID } = req.params;
-    const { authtoken } = req.headers;
-    console.log("userID", userID, "authToken", authtoken);
-    console.log(data_1.mockLoginDetails[userID]);
     try {
+        // grab the userID from the params
+        const { userID } = req.params;
+        // grab the authtoken from the headers
+        const { authtoken } = req.headers;
+        console.log("userID", userID, "authToken", authtoken, "mock user data", data_1.mockLoginDetails[userID]);
         if (data_1.mockLoginDetails[userID].authToken === authtoken) {
             return next();
         }
-        return res.sendStatus(403).send("NOT AUTHORIZED");
+        return res.status(403).send("NOT AUTHORIZED");
     }
     catch (e) {
         return res.json({ message: "Internal Error" });

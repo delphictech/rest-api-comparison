@@ -26,7 +26,7 @@ Thank you for your interest in contributing to this project! Before you get star
 
 - Since this repo, is a collaboration of many different languages/frameworks, many different standards will have to be used to best match the language.
 - In your language's README.md file please provide several links or resources to the "Coding Standards" section of the README. This will provide the maintainers of the repo to inspect your code to make sure, you are using best practices for your specific language/framework.
-- You can look at the Golang example [here](https://github.com/promethean-tech/go-vs-node-api/issues)
+- You can look at the Golang example [here](https://github.com/promethean-tech/rest-api-comparison/tree/main/go)
 - Without these resources, your PR will not be merged.
 
 # Language API requirements
@@ -76,11 +76,25 @@ const mockCoinDetails = {
 };
 ```
 
-- For example, if you go to route localhost:8000/coins/alex and you have an input called "authToken" inside the headers set to "123" then you could receive his balance of 100 tokens. If the username or authToken is not set correctly inside the headers, then this route will throw an error  explaining that they are not permitted to access this route. 
+- For example, if you go to route localhost:8000/coins/alex and you have an input called "authtoken" inside the headers set to "123" then you could receive his balance of 100 tokens. If the username or authToken is not set correctly inside the headers, then this route will throw an error  explaining that they are not permitted to access this route.
+
+## Testing 
+
+A testing folder is in place that will test all three of these basic API routes. Before creating your PR please make sure all of the unit tests pass.
+
+To run these unit tests, run your local server at localhost8000
+
+```bash
+cd tests
+npm install
+npm run test
+```
+- Please note that even if you don't have the server running, at least 1 unit test should pass ensuring that you have the tests folder configured/installed properly.
+- For more testing requirements, please check the tests [README.md](https://github.com/promethean-tech/rest-api-comparison/tree/dev/tests)
 
 ## Documentation
 
-If you are adding a language to the repo, please copy this as a baseline README.md for your language. If your language's README.md does not contain at least these fields, your PR will not be merged. The node README example can be found [here]()
+If you are adding a language to the repo, please copy this as a baseline README.md for your language. If your language's README.md does not contain at least these fields, your PR will not be merged. The node README example can be found [here](https://github.com/promethean-tech/rest-api-comparison/tree/main/node#learning-nodejs-rest-api-project)
 
 ```
 # Learning [Your language or framework] REST API Project

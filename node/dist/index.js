@@ -11,12 +11,12 @@ const port = 8000;
 const app = (0, express_1.default)();
 // INITIAL API ROUTE
 app.get("/", (_req, res) => {
-    res.send("HELLO FROM EXPRESS");
+    res.send("HELLO WORLD");
 });
 // Test case to see a route without any middleware
 app.get("/test", controllers_1.test);
 // actual use case where middleware has to check auth before allowing route
-app.get("/coins/:userID", middleware_1.middleware, controllers_1.middlwareController);
+app.get("/coins/:userID", middleware_1.middleware, controllers_1.GetCoinBalance);
 app.listen(port, () => {
     console.log(`now listening on port ${port}`);
 });
