@@ -16,6 +16,8 @@
 
   *** 1-3 links providing the correct project layout for your language.
 
+  - There is not much on Rust/Axum-specific project layouts. I was able to find an example from the Tokio teams [Axum example page](https://github.com/tokio-rs/axum/tree/main/axum/src)
+
 ### Language Specifics
   
   *** 1-3 links providing links to learn the language or documentation
