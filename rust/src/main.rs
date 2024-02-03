@@ -10,8 +10,8 @@ use tokio::net::TcpListener;
 async fn main() {
      // Define the routes
      let app = Router::new().route(
-        "/hello",
-        get(|| async { Html("Hello,<strong> World! </strong>") }),
+        "/",
+        get(|| async { Html("HELLO WORLD") }),
     );
 
     // Define the address and port
