@@ -14,8 +14,10 @@ export async function fetchDataFromAPI(
 ) {
   try {
     const response = await axios.get(URL, { headers });
+
     return response.data;
   } catch (error) {
+    console.log("ERROR", error);
     throw error;
   }
 }
