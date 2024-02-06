@@ -1,33 +1,35 @@
-// use axum::{
-//     handler::{get, Handler},
-//     http::{Request, Response, StatusCode},
-//     response::{IntoResponse, Json},
-//     routing::BoxRoute,
-//     Router,
-// };
-// use std::convert::Infallible;
+// use utils::get_mock_login_details;
+// use crate::utils;
 
+use axum::{
+    extract::Request,
+    http::{self, StatusCode},
+    middleware::Next,
+    response::Response,
+};
 
+use crate::utils::get_mock_login_details;
 
-// pub async fn auth_middleware<S>(req: Request<Body>, service: S) -> Result<Response<Body>, Infallible>
-// where
-//     S: Service<Request<Body>, Response = Response<Body>, Error = Infallible> + Clone,
-// {
-//     // Check if the authorization token is present in the headers
-//     if let Some(auth_header) = req.headers().get("authtoken") {
-//         if let Ok(auth_token) = auth_header.to_str() {
-//             // Here you can perform your authentication logic with the token
-//             // For demonstration purposes, let's just check if it's "valid_token"
-//             if auth_token == "valid_token" {
-//                 // If the token is valid, call the inner service and return its response
-//                 return Ok(service.clone().call(req).await.unwrap());
-//             }
-//         }
-//     }
-//     // If the token is not present or invalid, return a 403 Forbidden response
-//     let response = Json(json!({
-//         "error": "Unauthorized",
-//     }))
-//     .into_response();
-//     Ok((response, StatusCode::FORBIDDEN))
-// }
+async fn auth(mut req: Request, next: Next) -> Result<Response, StatusCode> {
+    get_mock_login_details();
+
+    let auth_header = req
+        .headers()
+        .get(http::header::AUTHORIZATION)
+        .and_then(|header| header.to_str().ok());
+
+    let auth_header = if let Some(auth_header) = auth_header {
+        auth_header
+    } else {
+        return Err(StatusCode::UNAUTHORIZED);
+    };
+
+    if let Some(current_user) = authorize_current_user(auth_header).await {
+        // insert the current user into a request extension so the handler can
+        // extract it
+        req.extensions_mut().insert(current_user);
+        Ok(next.run(req).await)
+    } else {
+        Err(StatusCode::UNAUTHORIZED)
+    }
+}

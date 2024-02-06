@@ -17,14 +17,14 @@ describe("Test Successful API Routes", () => {
     expect(result).toEqual("HELLO WORLD");
   });
 
-  // it("test the /test route", async () => {
-  //   // Mocking the API response
-  //   const mockData = { message: "testing route", code: 200 };
+  it("test the /test route", async () => {
+    // Mocking the API response
+    const mockData = { message: "testing route", code: 200 };
 
-  //   const result = await fetchDataFromAPI("http://localhost:8000/test");
+    const result = await fetchDataFromAPI("http://localhost:8000/test");
 
-  //   console.log("results", result);
+    console.log("results", result);
 
-  //   expect(result).toEqual(mockData);
-  // });
+    expect(result).toEqual(mockData);
+  });
 });

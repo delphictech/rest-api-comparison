@@ -7,6 +7,7 @@ use tower_http::cors::{Any, CorsLayer};
 mod handlers; // Import the handlers module
 
 mod middleware;
+mod utils;
 
 // use middleware::auth_middleware;
 
@@ -27,10 +28,9 @@ async fn main() {
         )
         .route("/test", get(handlers::handler_test_real))
         .layer(cors_middleware);
+
     // .route("/test2", get(handlers::handler_test));
     // .route("/coins/:name", get(handler_hello2).layer(auth_middleware));
-
-   
 
     // Define the address and port
     let listener = TcpListener::bind("0.0.0.0:8000").await.unwrap();
