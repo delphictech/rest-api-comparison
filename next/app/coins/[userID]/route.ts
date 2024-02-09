@@ -34,5 +34,5 @@ export async function GET(_: NextRequest, { params }: { params: { userID: string
     const authDetails = mockLoginDetails[params.userID];
     
     if (authDetails.authToken === authToken) return NextResponse.json(mockCoinDetails[authDetails.userName]);
-    return NextResponse.error();
-}
+    return NextResponse.json({ error: "Unauthorized User" }, { status: 403 });
+};
