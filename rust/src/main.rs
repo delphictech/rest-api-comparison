@@ -19,14 +19,13 @@ async fn main() {
 
     // Define the routes
     let app = Router::new()
-        .route(
-            "/",
-            get(|| async {
-                println!("Route accessed: /");
-                Html("HELLO WORLD")
-            }),
-        )
+        .route("/", get(|| async { Html("HELLO WORLD") }))
         .route("/test", get(handlers::handler_test_real))
+        .nest("/coins/:userid", {
+            // Define routes specifically for /test
+            Router::new().route("/", get(handlers::handler_coins_balance))
+            // .layer(middleware::auth_middleware)
+        })
         .layer(cors_middleware);
 
     // .route("/test2", get(handlers::handler_test));
