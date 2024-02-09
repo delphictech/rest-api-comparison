@@ -1,41 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Learning NEXTJS REST API Project
+Next.js is a powerful React framework that simplifies building server-side rendered (SSR) and statically generated (SSG) web applications. It provides a robust development environment with features like automatic code splitting, server-side rendering, and easy deployment, making it an ideal choice for building modern web applications with React.
 
-## Getting Started
+## Getting Running
 
-First, run the development server:
+### Installation/Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  Describe how to install the language onto your local machine.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  Describe how you can run the server on your machine and test the 3 required endpoints.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Language Project layout resources
+Run `npx create-next-app@latest` to get started with a next application.
 
-## Learn More
+### Language Specifics
+* [Main Site](https://nextjs.org/)
+* Building an API using [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers#url-query-parameters)
+* Using [CORS with Next](https://nextjs.org/docs/app/building-your-application/routing/route-handlers#cors) (advanced)
+* [Blog on using CORS](https://blog.logrocket.com/using-cors-next-js-handle-cross-origin-requests/) (advanced)
 
-To learn more about Next.js, take a look at the following resources:
+#### Summary
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here are some reasons to use Next: 
+1. Efficient Development: Next.js offers a streamlined development experience with features like automatic code splitting and hot module replacement, reducing boilerplate and speeding up development.
+2. Server-side Rendering (SSR): SSR in Next.js improves SEO by serving fully-rendered pages to search engine crawlers and enhances performance by reducing initial load times.
+3. Static Site Generation (SSG): Next.js supports SSG, enabling pre-rendering of pages at build time, resulting in faster page loads and reduced server load.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Resources
-
-* [CORS NEXTJS Configuration](https://nextjs.org/docs/app/building-your-application/routing/route-handlers#cors)
-* [Blog on CORS](https://blog.logrocket.com/using-cors-next-js-handle-cross-origin-requests/)
+However, there are also scenarios where Next.js may not be the best choice:
+1. Simple Static Sites: For simple static sites without the need for SSR or complex data fetching, a simpler static site generator like Gatsby may be more appropriate.
+2. Learning Curve: Next.js introduces additional complexity compared to basic React applications, which may require some learning time for developers unfamiliar with its concepts.
