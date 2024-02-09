@@ -33,6 +33,7 @@ export async function GET(_: NextRequest, { params }: { params: { userID: string
     const authToken = headersList.get("authtoken");
     const authDetails = mockLoginDetails[params.userID];
     
-    if (authDetails.authToken === authToken) return NextResponse.json(mockCoinDetails[authDetails.userName]);
+    if (authDetails.authToken === authToken) return NextResponse.json({ data: mockCoinDetails[authDetails.userName] });
     return NextResponse.json({ error: "Unauthorized User" }, { status: 403 });
+    // throw Error("Unauthorized User");
 };

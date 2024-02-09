@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
 
 export async function GET(): Promise<NextResponse> {
-    return NextResponse.json({ message: "Hello again!", code: 200 });
+    return NextResponse.json({ message: "testing route", code: 200 });
 };
