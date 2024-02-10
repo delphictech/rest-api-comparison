@@ -1,4 +1,4 @@
-# Learning [Your language or framework] REST API Project
+# Learning Rust REST API Project
 
   *** Brief 1-3 sentences talking about the project/language.
 
@@ -6,15 +6,29 @@
 
 ### Installation/Prerequisites
 
-  Describe how to install the language onto your local machine.
+  Please install Rust/Cargo on your local machine directly from [rust](https://www.rust-lang.org/tools/install) 
+
+  Running
+
+  ```bash
+  cargo --version
+  rustc --version
+
+  ``` 
+
+ In your terminal should return the latest version of rust/cargo.
 
 ### Running Project
 
-  Describe how you can run the server on your machine and test the 3 required endpoints.
+  Please run the following commands after installing rust
+
+
+  ```bash
+  cd rust
+  cargo run
+  ```
 
 ### Language Project layout resources
-
-  *** 1-3 links providing the correct project layout for your language.
 
   - There is not much on Rust/Axum-specific project layouts. I was able to find an example from the Tokio teams [Axum example page](https://github.com/tokio-rs/axum/tree/main/axum/src)
 
