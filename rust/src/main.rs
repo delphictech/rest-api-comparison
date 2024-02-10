@@ -4,12 +4,9 @@ use axum::{http::Method, response::Html, routing::get, Router};
 use tokio::net::TcpListener;
 use tower_http::cors::{Any, CorsLayer};
 
-mod handlers; // Import the handlers module
-
+mod handlers;
 mod middleware;
 mod utils;
-
-// use middleware::auth_middleware;
 
 #[tokio::main]
 async fn main() {

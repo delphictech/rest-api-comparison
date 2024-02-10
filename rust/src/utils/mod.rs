@@ -37,10 +37,10 @@ pub fn get_mock_login_details() -> HashMap<&'static str, User> {
     mock_login_details
 }
 
-pub fn get_mock_coin_details() -> HashMap<&'static str, CoinDetails> {
-    let mut mock_coin_details: HashMap<&str, CoinDetails> = HashMap::new();
-    mock_coin_details.insert("alex", CoinDetails { balance: 100 });
-    mock_coin_details.insert("jason", CoinDetails { balance: 200 });
-    mock_coin_details.insert("marie", CoinDetails { balance: 300 });
+pub fn get_mock_coin_details() -> HashMap<String, CoinDetails> {
+    let mut mock_coin_details: HashMap<String, CoinDetails> = HashMap::new();
+    mock_coin_details.insert(String::from("alex"), CoinDetails { balance: 100 });
+    mock_coin_details.insert(String::from("jason"), CoinDetails { balance: 200 });
+    mock_coin_details.insert(String::from("marie"), CoinDetails { balance: 300 });
     mock_coin_details
 }

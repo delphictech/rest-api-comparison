@@ -26,27 +26,22 @@ pub async fn handler_test_real() -> Response {
     Json(json_response).into_response()
 }
 
-pub async fn handler_coins_balance(
-    Path(name): Path<String>,
-) -> Result<axum::http::Response<Body>, StatusCode> {
-    let coin_balance: HashMap<&'static str, CoinDetails> = get_mock_coin_details();
+pub async fn handler_coins_balance(Path(name): Path<String>) -> Result<Response<Body>, StatusCode> {
+    let coin_balance: HashMap<String, CoinDetails> = get_mock_coin_details();
 
     println!("My object: {:?}", coin_balance["marie"].balance);
 
-    // Create a JSON object with the desired message and code
+    // Convert the borrowed &str to String before using it as a key
+    let name = name.to_string();
 
-    if let Some(value) = coin_balance.get("marie") {
+    if let Some(value) = coin_balance.get(&name) {
         let json_response = serde_json::json!({
             "balance": value.balance,
             "userName": name
         });
 
-        // Key found, do something with value
         Ok(Json(json_response).into_response())
     } else {
-        // Key not found, return bad request error
         Err(StatusCode::BAD_REQUEST)
     }
-
-    // Wrap the JSON object in the Json response type and return it
 }
