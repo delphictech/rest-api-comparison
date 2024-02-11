@@ -6,7 +6,7 @@ This is a basic PHP project created for learning purposes. The project focuses o
 
 ### Prerequisites
 
-Ensure you have PHP, Laravel and  installed on your machine.
+Ensure you have PHP and composer and  installed on your machine. Furthermore it is also recommended to have NPM and Node.js installed.
 
 If not, follow the instructions for installing PHP regading the [PHP website](https://www.php.net/manual/en/install.php).
 Since the documentation on the official website can be a little bit overwhelming, especially for Windows,
@@ -18,12 +18,20 @@ Check if PHP is installed in your terminal before proceeding:
 php -v
 ```
 
+After that, follow the instructions for installing composer regarding the [Composer  website](https://getcomposer.org/doc/00-intro.md).
+If you feel overwhelmed with this documentation, feel free to look a youtube video and do the steps provided there.
+
+Check if composer is installed in your terminal before proceeding:
+
+```bash
+composer -v
+```
+For instructions regarding installing Node.js and NPM, follow the instructions listed in the Node folder of this repo.
+
 ### Running Project
 
 ```bash
-clone or folk the repo...
-cd php
-php -S localhost:8000
+php artisan serve
 ```
 
 This will run the server at localhost:8000.
