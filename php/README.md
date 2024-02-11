@@ -1,0 +1,55 @@
+# Learning PHP REST API Project
+
+This is a basic PHP project created for learning purposes. The project focuses on making REST API calls and implementing middleware for a simple web application.
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have PHP installed on your machine.
+
+If not, follow the instructions for installing PHP regading the [PHP website](https://www.php.net/manual/en/install.php).
+Since the documentation on the official website can be a little bit overwhelming, especially for Windows,
+feel free to watch a [youtube video](https://www.youtube.com/watch?v=MPRLUd8Pmyo) which guides you through the PHP installation.
+
+Check if PHP is installed in your terminal before proceeding:
+
+```bash
+php -v
+```
+
+### Running Project
+
+```bash
+clone or folk the repo...
+cd php
+php -S localhost:8000
+```
+
+This will run the server at localhost:8000.
+
+## Resources
+
+### Language Project layout resources
+
+Since this example covers plain PHP, you have the freedom to structure your project directory in your way,
+however it is helpful to follow general best practices. Here are two examples.
+
+  - [Laravel Framework Project Structure](https://laravel.com/docs/10.x/structure)
+  - [How to choose a PHP project structure](https://docs.php.earth/faq/misc/structure/)
+    
+
+### Language Specifics
+
+Although this example covers plain PHP, it is recommended to use a framework to speed up development time and make use of already existing functions.
+Remember, programmers are lazy and if you can use things like a framework to speed things up, you should do.
+That being said, it is recommended to first gain a basic knowledge of the language itself before using a framework.
+Here is a good ressource that teaches you most of the things you need to know: [PHP for Beginners Full Course](https://www.youtube.com/watch?v=fw5ObX8P6as&t=0s)
+
+#### Summary
+
+PHP is by far the most used back end language out there. This is due to PHP being one of the first backend languages and many old websites being build with PHP.
+Also, CMS like Wordpress, which give people the possibility to create websites without knowing how to code, are build upon PHP.
+This being said, there are also cons in using PHP as a backend language, e.g. performance.
+To give you a better picutre, here are a few links:
+  - [PHP vs JavaScript](https://medium.com/geekculture/javascript-vs-php-the-best-language-for-backend-development-79d41736a279#:~:text=PHP%20is%20the%20abbreviation%20for,pages%20and%20database%2Ddriven%20sites)
