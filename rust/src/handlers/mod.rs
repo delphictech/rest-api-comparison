@@ -29,7 +29,7 @@ pub async fn handler_test_real() -> Response {
 pub async fn handler_coins_balance(Path(name): Path<String>) -> Result<Response<Body>, StatusCode> {
     let coin_balance: HashMap<String, CoinDetails> = get_mock_coin_details();
 
-    println!("My object: {:?}", coin_balance["marie"].balance);
+    println!("My object in route: {:?}", coin_balance["marie"].balance);
 
     // Convert the borrowed &str to String before using it as a key
     let name = name.to_string();

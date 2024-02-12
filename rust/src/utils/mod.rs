@@ -2,8 +2,8 @@ use std::collections::HashMap;
 
 #[derive(Debug)]
 pub struct User {
-    pub auth_token: &'static str,
-    pub user_name: &'static str,
+    pub auth_token: String,
+    pub user_name: String,
 }
 
 #[derive(Debug)]
@@ -11,27 +11,27 @@ pub struct CoinDetails {
     pub balance: u32,
 }
 
-pub fn get_mock_login_details() -> HashMap<&'static str, User> {
-    let mut mock_login_details: HashMap<&str, User> = HashMap::new();
+pub fn get_mock_login_details() -> HashMap<String, User> {
+    let mut mock_login_details: HashMap<String, User> = HashMap::new();
     mock_login_details.insert(
-        "alex",
+        String::from("alex"),
         User {
-            auth_token: "123",
-            user_name: "alex",
+            auth_token: "123".to_string(),
+            user_name: "alex".to_string(),
         },
     );
     mock_login_details.insert(
-        "jason",
+        String::from("jason"),
         User {
-            auth_token: "234",
-            user_name: "jason",
+            auth_token: "234".to_string(),
+            user_name: "jason".to_string(),
         },
     );
     mock_login_details.insert(
-        "marie",
+        String::from("marie"),
         User {
-            auth_token: "345",
-            user_name: "marie",
+            auth_token: "345".to_string(),
+            user_name: "marie".to_string(),
         },
     );
     mock_login_details
