@@ -22,7 +22,7 @@ npm run test api_error.test.ts
 npm run test api_success.test.ts
 ```
 ```bash
-npm run test api_test.ts
+npm run test api_test.test.ts
 ```
 
 - Please note that even if you don't have the server running, at least 1 unit test should pass ensuring that you have the tests folder configured/installed properly.
