@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Token;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Hello from Laravel!';
 });
+
+Route::get('/test', function () {
+    return [
+        'message' => 'Hello again!',
+        'code' => 200
+    ];
+});
+
+Route::get('/coins', function() {
+    return 'middlo';
+})->middleware(Token::class);
