@@ -13,7 +13,11 @@ lazy_static::lazy_static! {
     static ref LOGIN_DATA: HashMap<String, User> = get_mock_login_details();
 }
 
-pub async fn auth_middleware(req: Request<Body>, next: Next, Path(name): Path<String>) -> Result<Response<Body>, StatusCode> {
+pub async fn auth_middleware(
+    Path(name): Path<String>,
+    req: Request<Body>,
+    next: Next,
+) -> Result<Response<Body>, StatusCode> {
     println!("Middleware Fired!");
 
     // get path/params
@@ -43,5 +47,5 @@ pub async fn auth_middleware(req: Request<Body>, next: Next, Path(name): Path<St
         }
     }
 
-    Err(StatusCode::UNAUTHORIZED)
+    Err(StatusCode::FORBIDDEN)
 }

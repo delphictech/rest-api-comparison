@@ -36,8 +36,11 @@ pub async fn handler_coins_balance(Path(name): Path<String>) -> Result<Response<
 
     if let Some(value) = coin_balance.get(&name) {
         let json_response = serde_json::json!({
-            "balance": value.balance,
-            "userName": name
+            "data": {
+                "balance": value.balance,
+                "userName": name
+            }
+
         });
 
         Ok(Json(json_response).into_response())
