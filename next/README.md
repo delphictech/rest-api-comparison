@@ -4,14 +4,12 @@ Next.js is a powerful React framework that simplifies building server-side rende
 ## Getting Running
 
 ### Installation/Prerequisites
-
-  Describe how to install the language onto your local machine.
+Make sure to have [Node.js](https://nodejs.org/en) installed on your machine. Clone or fork the repository locally to get started.
 
 ### Running Project
+From this directory, run `yarn install` or `npm install` depending on your package manager of choice. To start the server on port 8000, run `yarn start -p 8000` or `npm start -p 8000`. 
 
-  Describe how you can run the server on your machine and test the 3 required endpoints.
-
-### Language Project layout resources
+### Language Resources
 Run `npx create-next-app@latest` to get started with a next application.
 
 ### Language Specifics
