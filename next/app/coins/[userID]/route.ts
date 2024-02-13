@@ -1,21 +1,21 @@
-import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
-const mockLoginDetails: Record<string, { authToken: string, userName: string }> = {
-    alex: {
-      authToken: "123",
-      userName: "alex",
-    },
-    jason: {
-      authToken: "234",
-      userName: "jason",
-    },
-    marie: {
-      authToken: "345",
-      userName: "marie",
-    },
+export const mockLoginDetails: Record<string, { authToken: string, userName: string }> = {
+  alex: {
+    authToken: "123",
+    userName: "alex",
+  },
+  jason: {
+    authToken: "234",
+    userName: "jason",
+  },
+  marie: {
+    authToken: "345",
+    userName: "marie",
+  },
 };
-const mockCoinDetails: Record<string, { balance: number }> = {
+
+export const mockCoinDetails: Record<string, { balance: number }> = {
     alex: {
         balance: 100,
     },
@@ -28,12 +28,6 @@ const mockCoinDetails: Record<string, { balance: number }> = {
 };
 
 export async function GET(_: NextRequest, { params }: { params: { userID: string } }) {
-    // get authorization
-    const headersList = headers();
-    const authToken = headersList.get("authtoken");
     const authDetails = mockLoginDetails[params.userID];
-    
-    if (authDetails.authToken === authToken) return NextResponse.json({ data: mockCoinDetails[authDetails.userName] });
-    return NextResponse.json({ error: "Unauthorized User" }, { status: 403 });
-    // throw Error("Unauthorized User");
+    return NextResponse.json({ data: mockCoinDetails[authDetails.userName] });
 };
