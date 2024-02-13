@@ -27,7 +27,7 @@ node --version
 clone or folk the repo...
 cd node
 npm install
-npm run dev
+npm run serve
 ```
 
 This will run the server at localhost8000, nodemon is running in the background, so you can make changes to the node code and it will automatically update the server.
