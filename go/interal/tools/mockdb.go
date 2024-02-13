@@ -6,23 +6,23 @@ var MockLoginDetails = map[string]LoginDetails{
 		userName:  "alex",
 	},
 	"jason": {
-		AuthToken: "a234",
+		AuthToken: "234",
 		userName:  "jason",
 	},
 	"marie": {
-		AuthToken: "b345",
+		AuthToken: "345",
 		userName:  "marie",
 	},
 }
 
 var MockCoinDetails = map[string]CoinBalanceDetails{
 	"alex": {
-		balance: 100,
+		Balance: 100,
 	},
 	"jason": {
-		balance: 200,
+		Balance: 200,
 	},
 	"marie": {
-		balance: 300,
+		Balance: 300,
 	},
 }

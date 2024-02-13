@@ -8,7 +8,7 @@ const app: Express = express();
 
 // INITIAL API ROUTE
 app.get("/", (_req: Request, res: Response) => {
-  res.send("HELLO FROM EXPRESS");
+  res.send("HELLO WORLD");
 });
 
 // Test case to see a route without any middleware

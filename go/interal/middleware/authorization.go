@@ -5,9 +5,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"github.com/promethean-tech/go-vs-node-api/tree/main/go/api"
 	"github.com/promethean-tech/go-vs-node-api/tree/main/go/interal/tools"
-	log "github.com/sirupsen/logrus"
 )
 
 var ErrorUnAuthorized = errors.New("invalidusername or token")
@@ -29,8 +27,9 @@ func Authorization(next http.Handler) http.Handler {
 		}
 
 		// throw error if incorrect auth
-		log.Error(ErrorUnAuthorized)
-		api.RequestErrorHandler(w, ErrorUnAuthorized)
+		http.Error(w, "Forbidden", http.StatusForbidden)
+		// log.Error(ErrorUnAuthorized)
+		// api.RequestErrorHandler(w, ErrorUnAuthorized)
 
 	})
 
