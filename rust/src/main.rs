@@ -5,7 +5,6 @@ use axum::{
     routing::get,
     Router,
 };
-
 use tokio::net::TcpListener;
 use tower_http::cors::CorsLayer;
 
@@ -13,51 +12,27 @@ mod handlers;
 mod middlewares;
 mod utils;
 
-// async fn log_middleware(
-//     Path(name): Path<String>,
-//     req: Request<Body>,
-//     next: Next,
-// ) -> Result<Response<Body>, StatusCode> {
-//     // Log information about the incoming request
-
-//     println!("Incoming request: {} {}", req.method(), req.uri().path());
-
-//     println!("{}", name.to_string());
-
-//     // Call the next handler in the chain
-//     let response = next.run(req).await;
-
-//     // Log information about the outgoing response
-//     println!("Outgoing response: {:?}", response.status());
-
-//     // Return the response
-//     Ok(response)
-// }
-
 #[tokio::main]
 async fn main() {
+    // Create a CORS middleware to handle Cross-Origin Resource Sharing
     let cors_middleware = CorsLayer::new()
-        .allow_origin("http://localhost:8000/".parse::<HeaderValue>().unwrap())
-        .allow_methods([Method::GET, Method::POST]);
+        .allow_origin("http://localhost:8000/".parse::<HeaderValue>().unwrap()) // Allow requests from localhost:8000
+        .allow_methods([Method::GET, Method::POST]); // Allow GET and POST methods
 
     // Define the routes
     let app = Router::new()
-        .route("/", get(|| async { Html("HELLO WORLD") }))
-        .route("/test", get(handlers::handler_test_real))
+        .route("/", get(|| async { Html("HELLO WORLD") })) // Define a route for the root path
+        .route("/test", get(handlers::handler_test_real)) // Define a route for /test
         .nest("/coins", {
-            // Define routes specifically for /test
+            // Nest routes under /coins
             Router::new()
-                .route("/:userid", get(handlers::handler_coins_balance))
-                // .route_layer(middleware::from_fn(log_middleware))
-            .route_layer(middleware::from_fn(middlewares::auth_middleware))
+                .route("/:userid", get(handlers::handler_coins_balance)) // Define a route for getting the coin balance for a user
+                .route_layer(middleware::from_fn(middlewares::auth_middleware)) // Apply authentication middleware to all routes under /coins
         })
-        .layer(cors_middleware);
-
-    // .route("/test2", get(handlers::handler_test));
-    // .route("/coins/:name", get(handler_hello2).layer(auth_middleware));
+        .layer(cors_middleware); // Apply CORS middleware to the entire application
 
     // Define the address and port
-    let listener = TcpListener::bind("0.0.0.0:8000").await.unwrap();
-    println!("->> LISTENING on {:?}\n", listener.local_addr());
-    axum::serve(listener, app).await.unwrap();
+    let listener = TcpListener::bind("0.0.0.0:8000").await.unwrap(); // Bind the server to listen on all interfaces on port 8000
+    println!("->> LISTENING on {:?}\n", listener.local_addr()); // Print out the address and port the server is listening on
+    axum::serve(listener, app).await.unwrap(); // Start serving the application
 }
