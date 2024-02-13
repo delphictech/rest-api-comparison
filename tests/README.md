@@ -13,6 +13,18 @@ cd tests
 npm install
 npm run test
 ```
+You can also run specific test files by running
+
+```bash
+npm run test api_error.test.ts
+```
+```bash
+npm run test api_success.test.ts
+```
+```bash
+npm run test api_test.ts
+```
+
 - Please note that even if you don't have the server running, at least 1 unit test should pass ensuring that you have the tests folder configured/installed properly.
 
 
