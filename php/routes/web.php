@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Middleware\Token;
+use App\Http\Controllers\CoinController;
+use App\Http\Middleware\Coins;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,16 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'Hello from Laravel!';
+    return 'HELLO WORLD';
 });
 
 Route::get('/test', function () {
     return [
-        'message' => 'Hello again!',
+        'message' => 'testing route',
         'code' => 200
     ];
 });
 
-Route::get('/coins', function() {
-    return 'middlo';
-})->middleware(Token::class);
+Route::get('/coins/{name}', [CoinController::class, 'show'])->middleware(Coins::class);
