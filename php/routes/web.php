@@ -26,4 +26,5 @@ Route::get('/test', function () {
     ];
 });
 
-Route::get('/coins/{name}', [CoinController::class, 'show'])->middleware(Coins::class);
+Route::get('/coins/{name}', [CoinController::class, 'show'])
+    ->middleware(Coins::class);
