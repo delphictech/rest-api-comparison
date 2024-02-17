@@ -31,6 +31,8 @@ For instructions regarding installing Node.js and NPM, follow the instructions l
 ### Running Project
 
 ```bash
+composer install
+npm install
 php artisan serve
 ```
 
