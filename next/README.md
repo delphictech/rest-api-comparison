@@ -7,10 +7,15 @@ Next.js is a powerful React framework that simplifies building server-side rende
 Make sure to have [Node.js](https://nodejs.org/en) installed on your machine. Clone or fork the repository locally to get started.
 
 ### Running Project
-From this directory, run `yarn install` or `npm install` depending on your package manager of choice. To start the server on port 8000, run `yarn start -p 8000` or `npm start -p 8000`. 
+From this directory, run `npm install`. To start the server on port 8000, run `npm run dev`. 
 
 ### Language Resources
 Run `npx create-next-app@latest` to get started with a next application.
+
+### Language Project layout resources
+
+- [Next Routing](https://nextjs.org/docs/app/building-your-application/routing/colocation)
+- Next [App Router](https://nextjs.org/docs/app)
 
 ### Language Specifics
 * [Main Site](https://nextjs.org/)
