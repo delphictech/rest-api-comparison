@@ -2,7 +2,7 @@
 
 
   This is a basic Go project created for learning purposes. The project emphasizes making REST API calls and implementing middleware for a simple web application.
-  
+ 
 ## Getting Running
 
 ### Installation/Prerequisites
