@@ -1,7 +1,7 @@
 # Learning [Your language or framework] REST API Project
 
 
-  This is a basic Go project created for learning purposes. The project emphasizes making REST API calls and implementing middleware for a simple web application.
+ Python is a versatile programming language known for its readability and simplicity, while Flask is a lightweight web framework that makes it easy to build web applications in Python by providing tools, libraries, and patterns for building web services. Together, Python and Flask enable developers to create dynamic and scalable web applications with minimal boilerplate code.
  
 ## Getting Running
 
@@ -30,15 +30,14 @@ The debug flag is optional, but will make the process of debugging the API easie
 
 ### Language Project layout resources
 
-  *** 1-3 links providing the correct project layout for your language.
-  [PEPS 8 Style Guide](https://peps.python.org/pep-0008/)
+  - [PEPS 8 Style Guide](https://peps.python.org/pep-0008/)
 
 ### Language Specifics
   
-  *** 1-3 links providing links to learn the language or documentation
-  [Learning Python](https://realpython.com/)
-  [Flask Quickstart Docs](https://flask.palletsprojects.com/en/3.0.x/quickstart/)
-  [Check out Django As Well](https://www.djangoproject.com/)
+  
+  - [Learning Python](https://realpython.com/)
+  - [Flask Quickstart Docs](https://flask.palletsprojects.com/en/3.0.x/quickstart/)
+  - [Check out Django As Well](https://www.djangoproject.com/)
 
 #### Summary
 
