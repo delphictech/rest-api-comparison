@@ -20,7 +20,7 @@ namespace TestController.Controllers
         {
             var response = new
             {
-                message = "test route",
+                message = "testing route",
                 code = 200
             };
 
