@@ -1,19 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
+using MyProject.Data;
 
 namespace TestController.Controllers
 {
     [ApiController]
-    [Route("/")] // Base route for the controller, applied to the root route "/"
+    [Route("/")]
     public class TestController : ControllerBase
     {
-        // Route: /
         [HttpGet]
         public IActionResult GetRoot()
         {
             return Ok("HELLO WORLD");
         }
 
-        // Route: /test
         [HttpGet]
         [Route("test")]
         public IActionResult GetTest()
@@ -27,21 +26,32 @@ namespace TestController.Controllers
             return Ok(response);
         }
 
-          // Route: /coins/{userId}
         [HttpGet]
         [Route("coins/{userId}")]
         public IActionResult GetUserCoins(string userId)
         {
-            // Now you can use the userId parameter in your method
+            // Default balance to 0
+            int balance = 0;
+
+            // Check if the userId exists in MockCoinDetails
+            if (MockData.MockCoinDetails.ContainsKey(userId))
+            {
+                balance = MockData.MockCoinDetails[userId].Balance;
+            }
+
             var response = new
             {
-                userId = userId,
-                message = $"Coins for user {userId}",
-                code = 200
+                data = new
+                {
+                    userId = userId,
+                    message = $"Coins for user {userId}",
+                    code = 200,
+                    balance = balance
+                }
             };
 
-            return Ok(response);
-        }
-        
-    }
-}
+            return Ok(response);  // Correctly return the response
+    } // Make sure this closing brace exists for the method
+
+} // Make sure this closing brace exists for the class
+} // Make sure this closing brace exists for the namespace

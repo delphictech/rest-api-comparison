@@ -19,8 +19,14 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 // Apply middleware to specific paths
-app.UseWhen(context => context.Request.Path.StartsWithSegments("/api/resource"),
-            appBuilder => appBuilder.UseMiddleware<AuthMiddleware>());
+app.UseWhen(context =>
+{
+    var path = context.Request.Path.Value;
+
+    // Check if the path matches /coins/{userId} with some validation
+    return path != null && path.StartsWith("/coins/") && path.Split('/').Length == 3;
+},
+appBuilder => appBuilder.UseMiddleware<AuthMiddleware>());
 
 app.MapControllers(); 
 
