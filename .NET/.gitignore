@@ -1,0 +1,135 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto generated files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.vscode/*
+
+# Rider directories
+.idea/
+
+# Local History for Rider
+.idea/.idea.LocalHistory/
+
+# Logs
+*.log
+
+# Visual Studio temporary files
+.vs/
+*.tlog
+*.log
+*.pdb
+
+# Visual Studio Code files
+.vscode/
+
+# NCrunch
+.ncrunchsolution
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Packages
+*.nupkg
+*.snupkg
+*.nuspec
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotNetCore
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*.dll
+*.exe
+*.app
+*.appx
+*.appxbundle
+*.appxsym
+*.appxupload
+*.ilk
+*.map
+*.winmd
+
+# Publish folder
+publish/
+
+# CMake
+CMakeLists.txt.user
+
+# Azure Functions
+local.settings.json
+
+# Coverage Results
+*.coverage
+*.coveragexml
+*.cov
+*.explanation.xml
+*.testloggerresults
+
+# SQL Server Files
+*.mdf
+*.ldf
+
+# LocalDB database files
+*.mdf
+*.ldf
+
+# EntityFramework
+*.edmx.sql
+*.edmx.diagrams
+*.edmx.rules
+
+# Server settings file
+ApplicationInsights.config
+
+# NuGet
+*.nupkg
